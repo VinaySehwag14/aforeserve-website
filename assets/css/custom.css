@@ -1,0 +1,966 @@
+/* Custom CSS for Full-Width Heading */
+
+/* =========================
+   Choose (Services) section
+   ========================= */
+/* =========================
+   Premium Choose Section CSS
+   (drop-in, replaces your current block)
+   ========================= */
+
+.tj-choose-modern {
+  --tj-choose-radius: 18px;
+  --tj-choose-border: rgba(15, 23, 42, 0.08);
+  --tj-choose-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --tj-choose-shadow-hover: 0 18px 40px rgba(15, 23, 42, 0.14);
+  --tj-choose-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Heading */
+.tj-choose-modern .sec-heading.style-3 .desc {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+/* Make each column behave like a full-height card holder */
+.tj-choose-modern .rightSwipeWrap > [class*="col-"] {
+  display: flex;
+}
+
+/* Card base */
+.tj-choose-modern .choose-box.style-2 {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--tj-choose-radius);
+  border: 1px solid var(--tj-choose-border);
+  overflow: hidden;
+  display: flex;
+  box-shadow: var(--tj-choose-shadow);
+  transition: transform 0.35s var(--tj-choose-ease),
+    box-shadow 0.35s var(--tj-choose-ease),
+    border-color 0.35s var(--tj-choose-ease);
+  will-change: transform;
+}
+
+/* Inner layout */
+.tj-choose-modern .choose-box.style-2 .choose-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ICON: premium pill with theme tint (no hardcoded blue) */
+.tj-choose-modern .choose-box.style-2 .choose-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  color: var(--tj-color-theme-primary);
+  background: rgba(0, 0, 0, 0.05);
+  transition: background 0.35s var(--tj-choose-ease),
+    color 0.35s var(--tj-choose-ease), transform 0.35s var(--tj-choose-ease);
+}
+
+/* If color-mix is supported, tint bg using theme color */
+@supports (background: color-mix(in srgb, #000 10%, transparent)) {
+  .tj-choose-modern .choose-box.style-2 .choose-icon {
+    background: color-mix(
+      in srgb,
+      var(--tj-color-theme-primary) 14%,
+      transparent
+    );
+  }
+}
+
+.tj-choose-modern .choose-box.style-2 .choose-icon i {
+  font-size: 22px;
+  transition: color 0.35s var(--tj-choose-ease);
+}
+
+/* Title: lock height so cards align even when titles wrap */
+.tj-choose-modern .choose-box.style-2 .title {
+  margin: 0 0 8px 0;
+  line-height: 1.15;
+  min-height: 2.3em; /* ~2 lines */
+}
+
+/* Tag: closer to title + premium pill */
+.tj-choose-modern .choose-box.style-2 .choose-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin: 0 0 14px 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--tj-color-theme-primary);
+  background: rgba(0, 0, 0, 0.05);
+  transition: background 0.35s var(--tj-choose-ease),
+    color 0.35s var(--tj-choose-ease);
+}
+
+@supports (background: color-mix(in srgb, #000 10%, transparent)) {
+  .tj-choose-modern .choose-box.style-2 .choose-tag {
+    background: color-mix(
+      in srgb,
+      var(--tj-color-theme-primary) 12%,
+      transparent
+    );
+  }
+}
+
+/* Description: keep baseline consistent across cards */
+.tj-choose-modern .choose-box.style-2 .desc {
+  margin: 0;
+  flex: 1;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+/* Premium hover */
+.tj-choose-modern .choose-box.style-2:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--tj-choose-shadow-hover);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+/* IMPORTANT: when the card background flips (your existing theme hover),
+   ensure icon + tag stay readable and look intentional */
+.tj-choose-modern .choose-box.style-2:hover .choose-icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.tj-choose-modern .choose-box.style-2:hover .choose-icon i {
+  color: #fff;
+}
+
+.tj-choose-modern .choose-box.style-2:hover .choose-tag {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* If your theme sets hover bg on the entire card, make text readable too */
+.tj-choose-modern .choose-box.style-2:hover .title,
+.tj-choose-modern .choose-box.style-2:hover .desc {
+  color: #fff;
+}
+
+/* Responsive polish */
+@media (max-width: 991.98px) {
+  .tj-choose-modern .choose-box.style-2 .desc {
+    max-width: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tj-choose-modern .sec-title {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .tj-choose-modern .choose-box.style-2 {
+    border-radius: 16px;
+  }
+
+  .tj-choose-modern .choose-box.style-2 .title {
+    min-height: 0; /* let it flow naturally on mobile */
+  }
+}
+
+/* Testimonial author icon styles */
+.testimonial-author .author-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tj-color-grey-1, #ecf0f0);
+  overflow: hidden;
+  margin-right: 12px;
+}
+.testimonial-author .author-img .author-icon {
+  font-size: 26px;
+  color: var(--tj-color-theme-primary, #1e8a8a);
+  display: inline-block;
+  line-height: 1;
+}
+.testimonial-author .author-inner {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   Locations Section
+   ========================= */
+
+.tj-locations .sec-heading.style-3 .desc {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+/* =========================
+   Map Container
+   ========================= */
+
+.tj-map-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(8, 18, 18, 0.04);
+  border: 1px solid rgba(10, 28, 28, 0.1);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+}
+
+.tj-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================
+   Clean Minimal Markers
+   ========================= */
+
+.tj-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* dot */
+.tj-marker__dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* pulse */
+.tj-marker__dot::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.7;
+  animation: tjPulse 1.8s ease-out infinite;
+}
+
+/* HO label only */
+.tj-marker__label {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  color: currentColor;
+  margin-left: 4px;
+}
+
+/* hover emphasis */
+.tj-marker:hover .tj-marker__dot {
+  transform: scale(1.2);
+}
+
+/* =========================
+   Marker Color Groups
+   ========================= */
+
+/* Head Office – premium gold */
+.tj-marker--hq {
+  color: #d4af37;
+}
+
+/* Repair Factory – emerald */
+.tj-marker--factory {
+  color: #10b981;
+}
+
+/* On-Site Centers – teal */
+.tj-marker--onsite {
+  color: #22c1c3;
+}
+
+/* =========================
+   Pulse Animation
+   ========================= */
+
+@keyframes tjPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   Location Info Cards
+   ========================= */
+
+.tj-location-cards {
+  display: grid;
+  gap: 14px;
+}
+
+.tj-location-card {
+  border-radius: 16px;
+  border: 1px solid rgba(10, 28, 28, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+}
+
+.tj-location-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: rgba(10, 18, 18, 0.9);
+  background: rgba(8, 18, 18, 0.08);
+  margin-bottom: 10px;
+}
+
+.tj-location-badge--hq {
+  background: rgba(212, 175, 55, 0.18);
+}
+
+.tj-location-badge--factory {
+  background: rgba(16, 185, 129, 0.18);
+}
+
+.tj-location-badge--onsite {
+  background: rgba(34, 193, 195, 0.18);
+}
+
+.tj-location-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: rgba(10, 18, 18, 0.92);
+  margin-bottom: 4px;
+}
+
+.tj-location-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(10, 18, 18, 0.7);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 575.98px) {
+  .tj-marker__label {
+    display: none; /* hide HO text on small screens */
+  }
+}
+
+/* =====================================================
+   HERO TEXT VISIBILITY FIX (ANTI-FADE)
+   Paste AFTER all existing CSS
+   ===================================================== */
+
+/* Kill any inherited opacity on hero content */
+.tj-hero-merged .slider-title,
+.tj-hero-merged .slider-title span,
+.tj-hero-merged .slider-desc,
+.tj-hero-merged .slider-btn,
+.tj-hero-merged .slider-content * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Prevent animation layers from dimming text */
+.tj-hero-merged .title-anim,
+.tj-hero-merged .wow {
+  opacity: 1 !important;
+}
+
+/* Ensure text sits above overlay + bg */
+.tj-hero-merged .slider-content {
+  position: relative;
+  z-index: 5;
+}
+
+/* Improve text contrast slightly (premium, not harsh) */
+.tj-hero-merged .slider-title {
+  color: #ffffff;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.tj-hero-merged .slider-title span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tj-hero-merged .slider-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* CTA stays punchy */
+.tj-hero-merged .tj-primary-btn {
+  opacity: 1 !important;
+}
+
+/* Make sure overlay never exceeds this strength */
+.tj-hero-merged .tj-slider-item::before {
+  opacity: 1;
+}
+
+/* Navigation arrows stay visible */
+.tj-hero-merged .hero-navigation {
+  z-index: 6;
+}
+
+.tj-contact-modern {
+  position: relative;
+}
+
+.tj-contact-modern .tj-contact-intro {
+  padding-right: 12px;
+}
+
+.tj-contact-modern .tj-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 18px;
+  color: rgba(18, 32, 32, 0.9);
+  background: rgba(115, 210, 190, 0.65);
+  border: 1px solid rgba(115, 210, 190, 0.55);
+}
+
+.tj-contact-modern .tj-contact-title {
+  margin-top: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.96);
+  line-height: 1.05;
+  font-size: clamp(34px, 4vw, 56px);
+}
+
+.tj-contact-modern .tj-contact-title span {
+  color: rgba(115, 210, 190, 0.95);
+}
+
+.tj-contact-modern .tj-contact-desc {
+  margin-top: 18px;
+  max-width: 560px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.tj-contact-modern .tj-contact-list {
+  margin-top: 34px;
+  display: grid;
+  gap: 18px;
+  max-width: 560px;
+}
+
+.tj-contact-modern .tj-contact-item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.tj-contact-modern .tj-contact-ic {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(18, 32, 32, 0.88);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  flex: 0 0 64px;
+}
+
+.tj-contact-modern .tj-contact-ic i {
+  font-size: 22px;
+}
+
+.tj-contact-modern .tj-contact-txt small {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4px;
+}
+
+.tj-contact-modern .tj-contact-txt strong {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.96);
+  line-height: 1.1;
+}
+
+.tj-contact-modern .tj-contact-item--link strong {
+  color: rgba(115, 210, 190, 0.95);
+}
+
+.tj-contact-modern .tj-arrow {
+  margin-left: 10px;
+  font-weight: 900;
+  opacity: 0.95;
+}
+
+/* FORM readability on dark card */
+.tj-contact-modern .tj-form-modern {
+  border-radius: 18px;
+}
+
+.tj-contact-modern .tj-form-modern .sec-title {
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.tj-contact-modern .tj-form-modern .sec-title span {
+  color: rgba(115, 210, 190, 0.95);
+}
+
+.tj-contact-modern .tj-form-modern .form-input input,
+.tj-contact-modern .tj-form-modern .form-input textarea {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.tj-contact-modern .tj-form-modern .form-input input::placeholder,
+.tj-contact-modern .tj-form-modern .form-input textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+  opacity: 1;
+}
+
+/* if theme uses underline inputs, boost contrast */
+.tj-contact-modern .tj-form-modern .form-input input,
+.tj-contact-modern .tj-form-modern .form-input textarea {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.tj-contact-modern .tj-form-modern .form-input input:focus,
+.tj-contact-modern .tj-form-modern .form-input textarea:focus {
+  border-color: rgba(115, 210, 190, 0.75);
+}
+
+/* button: keep visible */
+.tj-contact-modern .tj-btn-contrast {
+  background: rgba(115, 210, 190, 0.95);
+  border-color: rgba(115, 210, 190, 0.95);
+}
+.tj-contact-modern .tj-btn-contrast .btn-text span {
+  color: rgba(10, 18, 18, 0.92);
+  font-weight: 900;
+}
+.tj-contact-modern .tj-btn-contrast .btn-icon {
+  background: rgba(10, 18, 18, 0.92);
+}
+.tj-contact-modern .tj-btn-contrast .btn-icon i {
+  color: #fff;
+}
+
+/* Responsive spacing */
+@media (max-width: 991.98px) {
+  .tj-contact-modern .tj-contact-intro {
+    padding-right: 0;
+  }
+  .tj-contact-modern .tj-contact-desc {
+    font-size: 18px;
+  }
+  .tj-contact-modern .tj-contact-txt strong {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tj-contact-modern .tj-contact-ic {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+  }
+  .tj-contact-modern .tj-contact-txt strong {
+    font-size: 22px;
+  }
+}
+
+/* ===== HERO WRAP (merges hero + marquee) ===== */
+.tj-hero-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #081414;
+}
+
+/* remove extra gaps around the slider section */
+.tj-hero-wrap .tj-slider-section {
+  margin: 0;
+  padding: 0;
+}
+
+/* compact height - fixes “too tall” hero */
+.tj-hero-compact .tj-hero-swiper,
+.tj-hero-compact .tj-hero-slide {
+  min-height: clamp(520px, 72vh, 720px);
+}
+
+/* background image fill */
+.tj-hero-compact .slider-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+/* strong overlay so text stays readable */
+.tj-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      900px 520px at 20% 35%,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0) 55%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 18, 18, 0.88) 0%,
+      rgba(5, 18, 18, 0.72) 45%,
+      rgba(5, 18, 18, 0.55) 100%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* content above overlay */
+.tj-hero-row {
+  position: relative;
+  z-index: 2;
+}
+.tj-hero-content {
+  max-width: 560px;
+}
+
+/* make text visible (your current issue) */
+.tj-hero-compact .slider-title {
+  color: rgba(255, 255, 255, 0.96) !important;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+}
+.tj-hero-compact .slider-title span {
+  color: rgba(34, 193, 195, 0.98) !important;
+}
+.tj-hero-compact .slider-desc {
+  color: rgba(255, 255, 255, 0.78) !important;
+  max-width: 520px;
+}
+
+/* pill */
+.tj-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+}
+.tj-hero-pill i {
+  opacity: 0.9;
+}
+
+/* secondary link */
+.tj-hero-link {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.tj-hero-link:hover {
+  color: rgba(34, 193, 195, 0.98);
+}
+
+/* right graphic card */
+.tj-hero-graphic-wrap {
+  width: min(640px, 100%);
+  margin-left: auto;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+}
+.tj-hero-graphic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+}
+.tj-hero-graphic-fallback {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      420px 280px at 30% 35%,
+      rgba(34, 193, 195, 0.18),
+      rgba(34, 193, 195, 0) 55%
+    ),
+    radial-gradient(
+      360px 260px at 70% 65%,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0) 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    );
+}
+
+/* nav buttons clearer */
+.tj-hero-compact .hero-navigation {
+  position: absolute;
+  inset: auto 28px 110px auto;
+  z-index: 3;
+}
+.tj-hero-compact .slider-prev,
+.tj-hero-compact .slider-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+}
+.tj-hero-compact .slider-prev:hover,
+.tj-hero-compact .slider-next:hover {
+  background: rgba(34, 193, 195, 0.2);
+  border-color: rgba(34, 193, 195, 0.35);
+}
+
+/* ===== MERGED MARQUEE ===== */
+.tj-hero-marquee {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgba(34, 193, 195, 0.98);
+}
+
+/* remove extra spacing from your original marquee wrapper */
+.tj-hero-marquee.section-gap-x {
+  padding: 0 !important;
+}
+
+.tj-hero-wrap .tj-hero-marquee {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ensure marquee sits flush */
+.tj-hero-wrap .h8-maquee-inner {
+  padding: 18px 0;
+}
+
+/* marquee text readable */
+.tj-hero-wrap .marquee-title .title {
+  color: rgba(255, 255, 255, 0.96) !important;
+  font-weight: 800;
+}
+
+/* mobile tuning */
+@media (max-width: 991.98px) {
+  .tj-hero-compact .hero-navigation {
+    inset: auto 18px 98px auto;
+  }
+  .tj-hero-compact .tj-hero-swiper,
+  .tj-hero-compact .tj-hero-slide {
+    min-height: 560px;
+  }
+}
+/* =========================================================
+   HERO TEXT VISIBILITY FIX (force readable text + proper layers)
+   Paste at the VERY END of custom.css
+   ========================================================= */
+
+/* 1) Create a clean stacking context for each slide */
+.tj-hero-wrap .tj-hero-slide,
+.tj-hero-wrap .tj-slider-item {
+  position: relative;
+  isolation: isolate; /* prevents outside blend/opacity weirdness */
+}
+
+/* 2) Keep bg + overlay behind everything */
+.tj-hero-wrap .slider-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0 !important;
+}
+
+.tj-hero-wrap .tj-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1 !important;
+}
+
+/* 3) Force hero content above any theme pseudo overlays */
+.tj-hero-wrap .tj-hero-row,
+.tj-hero-wrap .tj-hero-content,
+.tj-hero-wrap .tj-hero-content * {
+  position: relative;
+  z-index: 5 !important;
+}
+
+/* If theme adds ::before/::after overlays on the slide, push them back */
+.tj-hero-wrap .tj-hero-slide::before,
+.tj-hero-wrap .tj-hero-slide::after,
+.tj-hero-wrap .tj-slider-item::before,
+.tj-hero-wrap .tj-slider-item::after {
+  z-index: 0 !important;
+}
+
+/* 4) Kill inherited opacity/filter from animations (wow/title anim/swiper states) */
+.tj-hero-wrap .tj-hero-content,
+.tj-hero-wrap .slider-title,
+.tj-hero-wrap .slider-desc,
+.tj-hero-wrap .slider-btn,
+.tj-hero-wrap .tj-hero-pill {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+/* Sometimes wow/anim classes keep opacity low */
+.tj-hero-wrap .wow,
+.tj-hero-wrap .title-anim,
+.tj-hero-wrap [class*="fade"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 5) Make text contrast strong (without looking harsh) */
+.tj-hero-wrap .slider-title {
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.tj-hero-wrap .slider-desc {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.tj-hero-wrap .tj-hero-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 6) Keep arrows clickable/visible */
+.tj-hero-wrap .hero-navigation {
+  position: absolute;
+  z-index: 6 !important;
+}
+
+/* =========================================================
+   HERO SLIDER: normalize spacing + typography across slides
+   Fixes tight layout when some slides have longer titles
+   ========================================================= */
+
+/* Give the hero content more breathing room (top + bottom) */
+.tj-hero-compact .tj-hero-slide .container {
+  padding-top: clamp(64px, 8vh, 110px);
+  padding-bottom: clamp(120px, 12vh, 170px); /* leaves room above marquee */
+}
+
+/* Slightly wider text column so long titles don’t stack too much */
+.tj-hero-compact .tj-hero-content {
+  max-width: 620px;
+}
+
+/* Make H1 responsive so all slides look balanced */
+.tj-hero-compact .slider-title {
+  font-size: clamp(36px, 4.2vw, 72px);
+  line-height: 1.06;
+  margin: 0 0 14px 0;
+  text-wrap: balance; /* modern browsers balance long lines nicely */
+}
+
+/* Keep highlight readable without increasing height too much */
+.tj-hero-compact .slider-title span {
+  display: inline;
+}
+
+/* Description spacing + readability */
+.tj-hero-compact .slider-desc {
+  font-size: clamp(14px, 1.15vw, 18px);
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 26px;
+  max-width: 56ch;
+}
+
+/* Ensure buttons never feel glued to text */
+.tj-hero-compact .slider-btn {
+  margin-top: 6px;
+}
+
+/* Slightly reduce pill spacing so long titles get room */
+.tj-hero-pill {
+  margin-bottom: 12px;
+}
+
+/* Smaller laptops: reduce padding + title a bit more */
+@media (max-width: 1199.98px) {
+  .tj-hero-compact .tj-hero-slide .container {
+    padding-top: clamp(54px, 7vh, 92px);
+    padding-bottom: clamp(110px, 11vh, 150px);
+  }
+  .tj-hero-compact .slider-title {
+    font-size: clamp(36px, 4vw, 62px);
+  }
+}
+
+/* Short-height screens: stop the hero from feeling squeezed */
+@media (max-height: 740px) {
+  .tj-hero-compact .tj-hero-slide .container {
+    padding-top: 54px;
+    padding-bottom: 130px;
+  }
+  .tj-hero-compact .slider-title {
+    font-size: clamp(32px, 4vw, 58px);
+  }
+}

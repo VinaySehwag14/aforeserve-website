@@ -1,0 +1,314 @@
+/* Custom Footer Redesign - RESPONSIVE FIX */
+.tj-footer-section.footer-modern {
+  background: var(--tj-color-theme-dark);
+  position: relative;
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 100px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Decorative background pattern */
+.tj-footer-section.footer-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle at 20% 50%,
+      rgba(14, 165, 233, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(14, 165, 233, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.footer-modern .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Main footer area */
+.footer-modern .footer-main-area {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Footer columns */
+.footer-modern .footer-widget {
+  margin-bottom: 0;
+}
+
+.footer-modern .footer-logo img {
+  max-width: 180px;
+  margin-bottom: 20px;
+  filter: brightness(1.1);
+}
+
+.footer-modern .footer-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Social icons */
+.footer-modern .footer-social-icons {
+  margin-top: 20px;
+}
+
+.footer-modern .social-links ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-modern .social-links li a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.footer-modern .social-links li a:hover {
+  background: #1e8a8a;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Footer titles */
+.footer-modern .footer-widget .title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-modern .footer-widget .title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #1e8a8a;
+}
+
+/* Navigation links */
+.footer-modern .widget-nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-modern .widget-nav-menu ul li {
+  margin-bottom: 12px;
+}
+
+.footer-modern .widget-nav-menu ul li a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-modern .widget-nav-menu ul li a::before {
+  content: "→";
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #1e8a8a;
+}
+
+.footer-modern .widget-nav-menu ul li a:hover {
+  color: #1e8a8a;
+  padding-left: 20px;
+}
+
+.footer-modern .widget-nav-menu ul li a:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+/* Contact info */
+.footer-modern .footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-modern .footer-contact ul li {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-modern .footer-contact ul li .icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(14, 165, 233, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e8a8a;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.footer-modern .footer-contact ul li .text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-top: 8px;
+  word-break: break-word;
+}
+
+.footer-modern .footer-contact ul li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-modern .footer-contact ul li a:hover .icon {
+  background: #1e8a8a;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-modern .footer-contact ul li a:hover .text {
+  color: #1e8a8a;
+}
+
+/* Copyright area */
+.footer-modern .tj-copyright-area {
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.footer-modern .copyright-text p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - CAREFUL ORDERING
+   ============================================ */
+
+/* Large desktops and up */
+@media (min-width: 1200px) {
+  .footer-modern .footer-main-area {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Tablets and below (991px and smaller) */
+@media (max-width: 991px) {
+  .tj-footer-section.footer-modern {
+    margin-top: 80px !important;
+  }
+
+  .footer-modern .footer-main-area {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+
+  .footer-modern .tj-copyright-area {
+    padding: 25px 0;
+  }
+}
+
+/* Small tablets (767px and smaller) */
+@media (max-width: 767px) {
+  .tj-footer-section.footer-modern {
+    margin-top: 60px !important;
+  }
+
+  .footer-modern .footer-main-area {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .footer-modern .footer-widget .title {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+
+  .footer-modern .footer-text p {
+    font-size: 14px;
+  }
+
+  .footer-modern .footer-contact ul li .text {
+    font-size: 14px;
+  }
+
+  .footer-modern .widget-nav-menu ul li a {
+    font-size: 14px;
+  }
+}
+
+/* Mobile phones (575px and smaller) */
+@media (max-width: 575px) {
+  .tj-footer-section.footer-modern {
+    margin-top: 50px !important;
+  }
+
+  .footer-modern .footer-main-area {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .footer-modern .footer-logo img {
+    max-width: 150px;
+  }
+
+  .footer-modern .footer-widget .title {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .footer-modern .footer-text p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .footer-modern .footer-contact ul li .text {
+    font-size: 13px;
+  }
+
+  .footer-modern .widget-nav-menu ul li a {
+    font-size: 13px;
+  }
+
+  .footer-modern .social-links li a {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
