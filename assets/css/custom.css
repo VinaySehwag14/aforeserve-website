@@ -25,7 +25,7 @@
 }
 
 /* Make each column behave like a full-height card holder */
-.tj-choose-modern .rightSwipeWrap > [class*="col-"] {
+.tj-choose-modern .rightSwipeWrap>[class*="col-"] {
   display: flex;
 }
 
@@ -69,11 +69,9 @@
 /* If color-mix is supported, tint bg using theme color */
 @supports (background: color-mix(in srgb, #000 10%, transparent)) {
   .tj-choose-modern .choose-box.style-2 .choose-icon {
-    background: color-mix(
-      in srgb,
-      var(--tj-color-theme-primary) 14%,
-      transparent
-    );
+    background: color-mix(in srgb,
+        var(--tj-color-theme-primary) 14%,
+        transparent);
   }
 }
 
@@ -86,7 +84,8 @@
 .tj-choose-modern .choose-box.style-2 .title {
   margin: 0 0 8px 0;
   line-height: 1.15;
-  min-height: 2.3em; /* ~2 lines */
+  min-height: 2.3em;
+  /* ~2 lines */
 }
 
 /* Tag: closer to title + premium pill */
@@ -108,11 +107,9 @@
 
 @supports (background: color-mix(in srgb, #000 10%, transparent)) {
   .tj-choose-modern .choose-box.style-2 .choose-tag {
-    background: color-mix(
-      in srgb,
-      var(--tj-color-theme-primary) 12%,
-      transparent
-    );
+    background: color-mix(in srgb,
+        var(--tj-color-theme-primary) 12%,
+        transparent);
   }
 }
 
@@ -172,7 +169,8 @@
   }
 
   .tj-choose-modern .choose-box.style-2 .title {
-    min-height: 0; /* let it flow naturally on mobile */
+    min-height: 0;
+    /* let it flow naturally on mobile */
   }
 }
 
@@ -188,12 +186,14 @@
   overflow: hidden;
   margin-right: 12px;
 }
+
 .testimonial-author .author-img .author-icon {
   font-size: 26px;
   color: var(--tj-color-theme-primary, #1e8a8a);
   display: inline-block;
   line-height: 1;
 }
+
 .testimonial-author .author-inner {
   display: flex;
   align-items: center;
@@ -312,6 +312,7 @@
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.7;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(3);
     opacity: 0;
@@ -381,7 +382,8 @@
 
 @media (max-width: 575.98px) {
   .tj-marker__label {
-    display: none; /* hide HO text on small screens */
+    display: none;
+    /* hide HO text on small screens */
   }
 }
 
@@ -580,13 +582,16 @@
   background: rgba(115, 210, 190, 0.95);
   border-color: rgba(115, 210, 190, 0.95);
 }
+
 .tj-contact-modern .tj-btn-contrast .btn-text span {
   color: rgba(10, 18, 18, 0.92);
   font-weight: 900;
 }
+
 .tj-contact-modern .tj-btn-contrast .btn-icon {
   background: rgba(10, 18, 18, 0.92);
 }
+
 .tj-contact-modern .tj-btn-contrast .btn-icon i {
   color: #fff;
 }
@@ -596,9 +601,11 @@
   .tj-contact-modern .tj-contact-intro {
     padding-right: 0;
   }
+
   .tj-contact-modern .tj-contact-desc {
     font-size: 18px;
   }
+
   .tj-contact-modern .tj-contact-txt strong {
     font-size: 24px;
   }
@@ -610,6 +617,7 @@
     height: 56px;
     flex: 0 0 56px;
   }
+
   .tj-contact-modern .tj-contact-txt strong {
     font-size: 22px;
   }
@@ -649,17 +657,13 @@
 .tj-hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      900px 520px at 20% 35%,
+  background: radial-gradient(900px 520px at 20% 35%,
       rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0) 55%
-    ),
-    linear-gradient(
-      90deg,
+      rgba(0, 0, 0, 0) 55%),
+    linear-gradient(90deg,
       rgba(5, 18, 18, 0.88) 0%,
       rgba(5, 18, 18, 0.72) 45%,
-      rgba(5, 18, 18, 0.55) 100%
-    );
+      rgba(5, 18, 18, 0.55) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -669,6 +673,7 @@
   position: relative;
   z-index: 2;
 }
+
 .tj-hero-content {
   max-width: 560px;
 }
@@ -678,9 +683,11 @@
   color: rgba(255, 255, 255, 0.96) !important;
   text-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
 }
+
 .tj-hero-compact .slider-title span {
   color: rgba(34, 193, 195, 0.98) !important;
 }
+
 .tj-hero-compact .slider-desc {
   color: rgba(255, 255, 255, 0.78) !important;
   max-width: 520px;
@@ -699,6 +706,7 @@
   margin-bottom: 16px;
   backdrop-filter: blur(10px);
 }
+
 .tj-hero-pill i {
   opacity: 0.9;
 }
@@ -712,6 +720,7 @@
   gap: 10px;
   text-decoration: none;
 }
+
 .tj-hero-link:hover {
   color: rgba(34, 193, 195, 0.98);
 }
@@ -729,30 +738,26 @@
   display: grid;
   place-items: center;
 }
+
 .tj-hero-graphic {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.92;
 }
+
 .tj-hero-graphic-fallback {
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-      420px 280px at 30% 35%,
+  background: radial-gradient(420px 280px at 30% 35%,
       rgba(34, 193, 195, 0.18),
-      rgba(34, 193, 195, 0) 55%
-    ),
-    radial-gradient(
-      360px 260px at 70% 65%,
+      rgba(34, 193, 195, 0) 55%),
+    radial-gradient(360px 260px at 70% 65%,
       rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0) 60%
-    ),
-    linear-gradient(
-      135deg,
+      rgba(255, 255, 255, 0) 60%),
+    linear-gradient(135deg,
       rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.03)
-    );
+      rgba(255, 255, 255, 0.03));
 }
 
 /* nav buttons clearer */
@@ -761,6 +766,7 @@
   inset: auto 28px 110px auto;
   z-index: 3;
 }
+
 .tj-hero-compact .slider-prev,
 .tj-hero-compact .slider-next {
   width: 44px;
@@ -772,6 +778,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.92);
 }
+
 .tj-hero-compact .slider-prev:hover,
 .tj-hero-compact .slider-next:hover {
   background: rgba(34, 193, 195, 0.2);
@@ -810,11 +817,13 @@
   .tj-hero-compact .hero-navigation {
     inset: auto 18px 98px auto;
   }
+
   .tj-hero-compact .tj-hero-swiper,
   .tj-hero-compact .tj-hero-slide {
     min-height: 560px;
   }
 }
+
 /* =========================================================
    HERO TEXT VISIBILITY FIX (force readable text + proper layers)
    Paste at the VERY END of custom.css
@@ -824,7 +833,8 @@
 .tj-hero-wrap .tj-hero-slide,
 .tj-hero-wrap .tj-slider-item {
   position: relative;
-  isolation: isolate; /* prevents outside blend/opacity weirdness */
+  isolation: isolate;
+  /* prevents outside blend/opacity weirdness */
 }
 
 /* 2) Keep bg + overlay behind everything */
@@ -903,7 +913,8 @@
 /* Give the hero content more breathing room (top + bottom) */
 .tj-hero-compact .tj-hero-slide .container {
   padding-top: clamp(64px, 8vh, 110px);
-  padding-bottom: clamp(120px, 12vh, 170px); /* leaves room above marquee */
+  padding-bottom: clamp(120px, 12vh, 170px);
+  /* leaves room above marquee */
 }
 
 /* Slightly wider text column so long titles don’t stack too much */
@@ -916,7 +927,8 @@
   font-size: clamp(36px, 4.2vw, 72px);
   line-height: 1.06;
   margin: 0 0 14px 0;
-  text-wrap: balance; /* modern browsers balance long lines nicely */
+  text-wrap: balance;
+  /* modern browsers balance long lines nicely */
 }
 
 /* Keep highlight readable without increasing height too much */
@@ -949,6 +961,7 @@
     padding-top: clamp(54px, 7vh, 92px);
     padding-bottom: clamp(110px, 11vh, 150px);
   }
+
   .tj-hero-compact .slider-title {
     font-size: clamp(36px, 4vw, 62px);
   }
@@ -960,7 +973,24 @@
     padding-top: 54px;
     padding-bottom: 130px;
   }
+
   .tj-hero-compact .slider-title {
     font-size: clamp(32px, 4vw, 58px);
   }
+}
+
+/* Subtitle Icon Styling */
+.sub-title-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* Add margin if not in a flex container with gap */
+span.sub-title .sub-title-icon {
+  margin-right: 10px;
 }
