@@ -17,16 +17,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(
-      circle at 20% 50%,
+  background-image: radial-gradient(circle at 20% 50%,
       rgba(14, 165, 233, 0.03) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
+      transparent 50%),
+    radial-gradient(circle at 80% 80%,
       rgba(14, 165, 233, 0.03) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   pointer-events: none;
 }
 
@@ -175,7 +171,12 @@
   justify-content: center;
   color: #1e8a8a;
   flex-shrink: 0;
-  font-size: 16px;
+}
+
+.footer-modern .footer-contact ul li .icon i {
+  font-size: 18px;
+  display: block;
+  line-height: 1;
 }
 
 .footer-modern .footer-contact ul li .text {
