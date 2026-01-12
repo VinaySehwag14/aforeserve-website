@@ -363,6 +363,11 @@
   background: rgba(34, 193, 195, 0.18);
 }
 
+.tj-location-badge--partners {
+  background: rgba(255, 141, 133, 0.843);
+
+}
+
 .tj-location-title {
   font-size: 16px;
   font-weight: 900;
@@ -628,7 +633,7 @@
   position: relative;
   border-radius: 18px;
   overflow: hidden;
-  background: #081414;
+  /* background: #081414; */
 }
 
 /* remove extra gaps around the slider section */
@@ -993,4 +998,158 @@
 /* Add margin if not in a flex container with gap */
 span.sub-title .sub-title-icon {
   margin-right: 10px;
+}
+
+/* =========================
+   Certification Section
+   ========================= */
+
+/* =========================
+   Certification Section
+   ========================= */
+
+.tj-certification-section {
+  position: relative;
+  background-color: var(--tj-color-grey-1, #f4f7f7);
+  overflow: hidden;
+}
+
+.tj-certification-section .sec-heading-wrap .desc {
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(14, 22, 22, 0.7);
+}
+
+.tj-certification-slider {
+  padding: 20px 0 60px;
+}
+
+.tj-cert-item {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.tj-cert-item .cert-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5.2;
+  overflow: hidden;
+  background: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
+}
+
+.tj-cert-item .cert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tj-cert-item .cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 18, 18, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(2px);
+}
+
+.tj-cert-item .view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e8a8a;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 20px rgba(30, 138, 138, 0.3);
+}
+
+.tj-cert-item:hover .cert-overlay {
+  opacity: 1;
+}
+
+.tj-cert-item:hover .view-btn {
+  transform: translateY(0);
+}
+
+.tj-cert-item:hover .cert-image img {
+  transform: scale(1.05);
+}
+
+.tj-cert-item .cert-content {
+  padding: 20px 10px 10px;
+}
+
+.tj-cert-item .title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 5px;
+  color: var(--tj-color-theme-secondary, #121616);
+  transition: color 0.4s ease;
+}
+
+.tj-cert-item .desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e8a8a;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+.tj-certification-slider .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.tj-certification-slider .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--tj-color-theme-primary, #1e8a8a);
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.tj-certification-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 25px;
+  border-radius: 5px;
+}
+
+/* Hover Effects */
+.tj-cert-item:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12);
+  border-color: var(--tj-color-theme-primary, #1e8a8a);
+}
+
+.tj-cert-item:hover .title {
+  color: var(--tj-color-theme-primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .tj-certification-section .sec-heading-wrap .desc {
+    font-size: 16px;
+  }
 }
