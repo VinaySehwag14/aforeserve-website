@@ -1,6 +1,100 @@
 /* Custom CSS for Full-Width Heading */
 
 /* =========================
+   Partners Grid Section
+   ========================= */
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  padding: 40px 0;
+  align-items: center;
+  justify-items: center;
+}
+
+.partners-grid .client-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+}
+
+.partners-grid .client-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.partners-grid .client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.partners-grid .client-logo img {
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.partners-grid .client-item:hover .client-logo img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .partners-grid .client-logo img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .partners-grid .client-item {
+    min-height: 100px;
+    padding: 15px;
+  }
+
+  .partners-grid .client-logo img {
+    max-height: 50px;
+  }
+}
+
+/* =========================
    Choose (Services) section
    ========================= */
 /* =========================
