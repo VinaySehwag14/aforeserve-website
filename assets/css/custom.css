@@ -1247,3 +1247,100 @@ span.sub-title .sub-title-icon {
     font-size: 16px;
   }
 }
+
+/* =========================
+   Company Overview Video Section
+   ========================= */
+
+.tj-video-section {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tj-video-section .video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tj-video-section .video-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+.tj-video-section .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.tj-video-section .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 18px;
+}
+
+.tj-video-section .video-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(10, 18, 18, 0.88);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.tj-video-section .video-wrapper:hover .video-badge {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .tj-video-section .video-container {
+    border-radius: 14px;
+  }
+
+  .tj-video-section .video-badge {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tj-video-section .sec-heading.style-3 .desc br {
+    display: none;
+  }
+
+  .tj-video-section .video-container {
+    border-radius: 12px;
+  }
+
+  .tj-video-section .video-badge {
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
